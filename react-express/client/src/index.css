@@ -1,0 +1,50 @@
+.static-card {
+    display: flex;
+}
+
+.static-card .static-image {
+    max-width: 18.75rem;
+}
+
+.news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.news .card {
+    max-width: 400px;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.news .card::before {
+    content: attr(data-source);
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgb(206, 227, 255);
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+.news .card .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media (max-width: 992px) {
+    .static-card {
+        flex-direction: column;
+    }
+
+    .static-card .static-image {
+        max-width: 100%;
+    }
+
+    .news .card {
+        max-width: 100%;
+    }
+}
